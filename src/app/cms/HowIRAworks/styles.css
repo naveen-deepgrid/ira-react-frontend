@@ -1,0 +1,21 @@
+.content {
+  background-color: #f4f4f4;
+  padding: 32px;
+}
+.my-section {
+  background-color: #fff;
+  padding: 8px;
+  width: 100%;
+  border-radius: 8px;
+  border: .5px solid gray;
+}
+.card{
+  margin: 20px 0;
+  background-color: #fff;
+  padding: 32px;
+  border: none;
+  margin-bottom: 20px;
+}
+.heading{
+  margin-bottom: 20px;
+}
