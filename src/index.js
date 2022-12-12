@@ -6,14 +6,16 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import Login from './app/admin/login';
+import Sections from './app/sections/sections';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
   <Routes>
-    <Route path="*" element={<Navigate to="/login" />} />
+    <Route path="*" element={<Navigate to="" />} />
     <Route path="login" element={<Login/>}/>
+    <Route path="" element={<Sections/>}/>
   </Routes>
 </BrowserRouter>
 );

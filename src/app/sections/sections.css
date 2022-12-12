@@ -1,0 +1,116 @@
+.main_col_left{
+    background-color: #753d6a;
+    height: 100vh;
+
+}
+.navbar-dropdown-cms{
+    background:'#732F64';
+    border-radius:'10px'
+}
+ul.navbar-dropdown-cms {
+    list-style: none; /* Remove default bullets */
+    display: none;
+  }
+  
+ ul.navbar-dropdown-cms li::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: white; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -0.3rem; /* Also needed for space (tweak if needed) */
+  }
+
+  .navbar-dropdown-md{
+    background:'#732F64';
+    border-radius:'10px'
+}
+ul.navbar-dropdown-md {
+    list-style: none; /* Remove default bullets */
+    display: none;
+  }
+  
+ ul.navbar-dropdown-md li::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: white; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -0.3rem; /* Also needed for space (tweak if needed) */
+  }
+
+  .main_div{
+    background: none;
+    border-radius: 10px;
+}
+
+.downarrow{
+    width: 40px;
+}
+
+.downarrow_md{
+    width: 40px;
+}
+
+.main_div_md{
+    background: none;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.main_div_anchors{
+    background: none;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.navbar-dropdown-anchors{
+    background:'#732F64';
+    border-radius:'10px'
+}
+
+ul.navbar-dropdown-anchors {
+    list-style: none; /* Remove default bullets */
+    display: none;
+  }
+  
+ ul.navbar-dropdown-anchors li::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: white; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -0.3rem; /* Also needed for space (tweak if needed) */
+  }
+  .downarrow_anchors{
+    width: 40px;
+  }
+
+
+.main_div_approvals{
+    background: none;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.navbar-dropdown-approvals{
+    background:'#732F64';
+    border-radius:'10px'
+}
+
+ul.navbar-dropdown-approvals {
+    list-style: none; /* Remove default bullets */
+    display: none;
+  }
+  
+ ul.navbar-dropdown-approvals li::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: white; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -0.3rem; /* Also needed for space (tweak if needed) */
+  }
+  .downarrow_approvals{
+    width: 40px;
+  }
