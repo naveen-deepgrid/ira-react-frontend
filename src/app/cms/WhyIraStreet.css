@@ -1,0 +1,34 @@
+.custom-scroll-bar{
+    overflow-y: scroll;
+    
+
+}
+
+#scroll-bar-style::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px white;
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#scroll-bar-style::-webkit-scrollbar
+{
+	width: 7px;
+    
+	background-color: #F5F5F5;
+}
+
+#scroll-bar-style::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+    height: 20px;
+	-webkit-box-shadow: inset 0 0 6px white;
+	background-color: rgb(202, 200, 200);
+}
+
+textarea:focus {
+  outline-style: none;
+  box-shadow: none;
+  border-color: transparent;
+    
+  }

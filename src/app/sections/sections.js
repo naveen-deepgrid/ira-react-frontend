@@ -12,8 +12,10 @@ import Property from '../../assets/property.svg'
 import Cms from '../../assets/cms.svg'
 import '../sections/sections.css'
 import $, { event } from 'jquery';
-import Connect from "../cms/connectwithus";
 import Faq from "../cms/faq";
+import Connect from "../cms/Connectwithus";
+import Channel from "../cms/ChannelPartners";
+import WhyIra from "../cms/WhyIraStreet";
 
 class Sections extends React.Component {
 
@@ -164,7 +166,9 @@ class Sections extends React.Component {
                                     <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} >Image Carousel</button>
                                 </li>
                                 <li style={{borderLeft:'2px solid white',listStylePosition:'inside',margin: '0 -1rem'}} >
-                                    <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} >Why IRA-Street</button>
+                                    <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} onClick={ ()=>{
+                                          this.setState({component :<WhyIra /> })
+                                    }} >Why IRA-Street</button>
                                 </li>
                                 <li style={{borderLeft:'2px solid white',listStylePosition:'inside',margin: '0 -1rem'}}>
                                     <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} >How IRA-Street Works</button>
@@ -180,11 +184,13 @@ class Sections extends React.Component {
                                 </li>
                                 <li style={{borderLeft:'2px solid white',listStylePosition:'inside',margin: '0 -1rem'}}>
                                     <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} onClick={ ()=>{
-                                          this.setState({component : <Connect />})
+                                          this.setState({component :<Connect /> })
                                     }}>Connect with Us</button>
                                 </li>
                                 <li style={{borderLeft:'2px solid white',listStylePosition:'inside',margin: '0 -1rem'}}>
-                                    <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} >Channel Partner</button>
+                                    <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} onClick={ ()=>{
+                                          this.setState({component :<Channel /> })
+                                    }} >Channel Partner</button>
                                 </li>
                                 <li style={{borderLeft:'2px solid white',listStylePosition:'inside',margin: '0 -1rem'}}>
                                     <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} >Anchors</button>
