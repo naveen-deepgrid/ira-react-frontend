@@ -1,12 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from '../../assets/logo.png'
+import Logo1 from '../../assets/logo1.png'
+import User from '../../assets/user.svg'
+import Approval from '../../assets/approval.svg'
 import DashboardLogo from '../../assets/dashboard.svg'
 import DownArrow from '../../assets/down_arrow.svg'
 import Login from "../admin/login";
+import Anchors from '../../assets/anchor.svg'
+import Property from '../../assets/property.svg'
+import Cms from '../../assets/cms.svg'
 import '../sections/sections.css'
 import $, { event } from 'jquery';
 import Connect from "../cms/connectwithus";
+import Faq from "../cms/faq";
 
 class Sections extends React.Component {
 
@@ -36,7 +43,7 @@ class Sections extends React.Component {
                 <div className="row">
                     <div className="col-xl-2 col-lg-2 col-md-2 col-sm-2 main_col_left" >
                     <Link to="" className="register-button">
-                        <img src={Logo} style={{margin: '2rem',background:'none'}}></img>
+                        <img src={Logo1} style={{margin: '2rem 4rem',background:'none'}}></img>
                     </Link>
 
                     <ul style={{margin:'2rem 0',padding:'0'}}>
@@ -56,7 +63,7 @@ class Sections extends React.Component {
                                 this.setState({component : <Login />})
                             }}>
                                 <div className="row">
-                                    <img src={DashboardLogo} style={{width:'45px'}}></img>
+                                    <img src={User} style={{width:'45px'}}></img>
                                     <div style={{color:'white',width:'10rem',textAlign:'left',margin:'1rem -1rem',fontSize:'16px'}}>User Management</div>
                                     <img src={DownArrow} style={{width:'40px'}}></img>
                                 </div>
@@ -68,7 +75,7 @@ class Sections extends React.Component {
                                     $(".navbar-dropdown-approvals").css('display', 'block','background','#732F64','border-radius','10px')
                                     $(".main_div_approvals").css('background','#732F64')
                                     $('.downarrow_approvals').css('rotate','180deg')
-                                    $('.main_col_left').css('height','auto')
+                                    // $('.main_col_left').css('height','auto')
                                     count = count + 1
                                 }else{
                                     $(".navbar-dropdown-approvals").css('display', 'none')
@@ -79,7 +86,7 @@ class Sections extends React.Component {
                                 }
                             }}>
                                 <div className="row">
-                                    <img src={DashboardLogo} style={{width:'45px'}}></img>
+                                    <img src={Approval} style={{width:'45px'}}></img>
                                     <div style={{color:'white',width:'6.5rem',textAlign:'left',margin:'1rem -1rem',fontSize:'16px'}}>Approvals</div>
                                     <img src={DownArrow} className="downarrow_approvals"></img>
                                 </div>
@@ -96,7 +103,7 @@ class Sections extends React.Component {
                                     $(".navbar-dropdown-anchors").css('display', 'block','background','#732F64','border-radius','10px')
                                     $(".main_div_anchors").css('background','#732F64')
                                     $('.downarrow_anchors').css('rotate','180deg')
-                                    $('.main_col_left').css('height','auto')
+                                    // $('.main_col_left').css('height','auto')
                                     count = count + 1
                                 }else{
                                     $(".navbar-dropdown-anchors").css('display', 'none')
@@ -107,7 +114,7 @@ class Sections extends React.Component {
                                 }
                             }}>
                                 <div className="row">
-                                    <img src={DashboardLogo} style={{width:'45px'}}></img>
+                                    <img src={Anchors} style={{width:'45px'}}></img>
                                     <div style={{color:'white',width:'9.5rem',textAlign:'left',margin:'1rem -1rem',fontSize:'16px'}}>Anchors-Listing Company</div>
                                     <img src={DownArrow} className="downarrow_anchors"></img>
                                 </div>
@@ -123,7 +130,7 @@ class Sections extends React.Component {
                                 this.setState({component : <Login />})
                             }}>
                                 <div className="row">
-                                    <img src={DashboardLogo} style={{width:'45px'}}></img>
+                                    <img src={Property} style={{width:'45px'}}></img>
                                     <div style={{color:'white',width:'12rem',textAlign:'left',margin:'1rem -1rem',fontSize:'16px'}}>Property Management</div>
                                     <img src={DownArrow} style={{width:'40px'}}></img>
                                 </div>
@@ -147,7 +154,7 @@ class Sections extends React.Component {
                                
                             }}>
                                 <div className="row">
-                                    <img src={DashboardLogo} style={{width:'45px'}}></img>
+                                    <img src={Cms} style={{width:'45px'}}></img>
                                     <div style={{color:'white',width:'4rem',textAlign:'left',margin:'1rem -1rem',fontSize:'16px'}}>CMS</div>
                                     <img src={DownArrow} className="downarrow"></img>
                                 </div>
@@ -183,7 +190,9 @@ class Sections extends React.Component {
                                     <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} >Anchors</button>
                                 </li>
                                 <li style={{borderLeft:'2px solid white',listStylePosition:'inside',margin: '0 -1rem'}}>
-                                    <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} >FAQ's</button>
+                                    <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}}  onClick={ ()=>{
+                                        this.setState({component : <Faq />})
+                                    }}>FAQ's</button>
                                 </li>
                                 <li style={{borderLeft:'2px solid white',listStylePosition:'inside',margin: '0 -1rem'}}>
                                     <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} >Footer</button>

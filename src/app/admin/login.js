@@ -1,6 +1,7 @@
 import React from "react";
 import '../admin/login.css'
 import { Link } from 'react-router-dom';
+import Logo from '../../assets/logo.png'
 
 class Login extends React.Component {
 
@@ -96,14 +97,17 @@ class Login extends React.Component {
                   <div className="sub-screen">
                       <form onSubmit={this.handleSubmit}>
                       <div className="row">
+                          <img src={Logo} style={{width:'230px',margin:'0 auto',marginTop:'3rem'}}></img>
                           <p className="p-head">ADMIN LOGIN</p>
-                          <input className="email-input" type="text" value={this.state.email} onChange={(e)=>{return this.setState({email : e.target.value}) }} placeholder="EMAIL" />
-                          <input className="password-input" type="password" value={this.state.password} onChange={(e)=>{return this.setState({password : e.target.value}) }} placeholder="PASSWORD"/>
-                          <button className="login-button" type="submit" >Login</button>
-                          <div className="row">
-                          <p className="account-p">IF YOU DON'T HAVE ACCOUNT?</p>
-                          <Link to="/register" className="register-button">REGISTER</Link>
-                          </div>
+                          <p style={{height:'5px',background:'#753d6a',width:'180px',margin:'-4rem auto'}}></p>
+                          <p style={{margin:'-1.5rem 3.5rem',fontSize:'14px'}}>Email*</p>
+                          <input className="email-input" type="text" value={this.state.email} onChange={(e)=>{return this.setState({email : e.target.value}) }} placeholder="Enter your registered email" />
+                          <p style={{margin:'0.2rem 3.5rem',fontSize:'14px',marginTop:'2rem'}}>Password*</p>
+                          <input className="password-input" type="password" value={this.state.password} onChange={(e)=>{return this.setState({password : e.target.value}) }} placeholder="Enter your password"/>
+                          {/* <p className="account-p">IF YOU DON'T HAVE ACCOUNT?</p> */}
+                          <Link to="" className="register-button" >Forgot your password?</Link>
+                          {/* <button className="login-button" type="submit" >LOGIN</button> */}
+                          <Link className="login-button" style={{color:'white'}} to="/dashboard" >LOGIN</Link>
                       </div>
                       </form>  
                   </div>
