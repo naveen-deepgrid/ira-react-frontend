@@ -5,6 +5,8 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import '../node_modules/font-awesome/css/font-awesome.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import Login from './app/admin/login';
 import Sections from './app/sections/sections';
 
@@ -13,9 +15,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
   <Routes>
-    <Route path="*" element={<Navigate to="" />} />
-    <Route path="login" element={<Login/>}/>
-    <Route path="" element={<Sections/>}/>
+    <Route path="*" element={<Navigate to="/login" />} />
+    <Route  path="login" element={<Login/>}/>
+    <Route path="/dashboard" element={<Sections/>}/>
   </Routes>
 </BrowserRouter>
 );

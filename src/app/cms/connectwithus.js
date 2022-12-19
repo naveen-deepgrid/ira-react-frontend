@@ -90,7 +90,7 @@ class Connect extends React.Component {
                             <p>Image 1*</p>
                             <label for="file-input">
                                  {this.renderPreview()}
-                               </label>
+                            </label>
                                <input type="file" id="file-input" onChange={this.handlePictureSelected.bind(this)} style={{display:'none'}}/>
 
                         </div>

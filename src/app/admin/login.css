@@ -6,10 +6,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url('../../assets/background.jpg');
+    background-color: rgba(78,42,72,.4),rgba(78,42,72,.4);
 }
 
 .sub-screen{
-    height: 500px;
+    height: 540px;
     width: 500px;
     background: white;
     margin: 13rem auto;
@@ -27,41 +28,47 @@
 }
 
 .email-input{
-    border: 1px solid black;
+    border: 1px medium black;
     background: none;
     width: 400px;
     margin: 0 4rem;
     height: 50px;
-    letter-spacing: 4px;
-    word-spacing: 2px;
-    font-size: 12px;
+    /* letter-spacing: 4px;
+    word-spacing: 2px; */
+    font-size: 15px;
+    opacity: 0.8;
+    border-radius: 5px;
 }
 
 .password-input{
-    border: 1px solid black;
+    border: 1px medium black;
     background: none;
     width: 400px;
-    margin: 1rem 4rem;
+    margin: 0 4rem;
     height: 50px;
-    letter-spacing: 4px;
-    word-spacing: 2px;
-    font-size: 12px;
+    /* letter-spacing: 4px;
+    word-spacing: 2px; */
+    font-size: 15px;
+    opacity: 0.8;
+    border-radius: 5px;
 }
 
 .login-button{
     border: 1px solid black;
-    background: black;
+    background: #753d6a;
     color: white;
-    width: 400px;
-    margin: 1rem 4rem;
+    width: 120px;
+    margin: 1rem auto;
     height: 50px;
-    letter-spacing: 4px;
-    word-spacing: 2px;
-    font-size: 12px;
+    /* letter-spacing: 4px;
+    word-spacing: 2px; */
+    font-size: 14px;
     font-weight: bold;
     text-decoration: none;
     text-align: center;
     padding: 1rem 0;
+    border-radius: 0.5rem;
+    border: none;
 }
 
 .account-p{
@@ -72,12 +79,18 @@
 }
 
 .register-button{
-    font-size: 10px;
-    width: 100px;
+    font-size: 12px;
     border: 0;
+    width: 162px;
     background: none;
-    margin: 0 -1rem;
-    color: black;
+    margin: 0 10rem;
+    /* color: black; */
+    float: right;
+    text-decoration: none;
+    color: #753d6a;
+    font-weight: bold;
+    margin-left: 19.5rem;
+    margin-top: 1rem;
 }
 
 @media only screen and (max-width: 414px) {
