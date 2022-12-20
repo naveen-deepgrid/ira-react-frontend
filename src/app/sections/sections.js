@@ -22,6 +22,7 @@ import MeetOurInvestors from "../cms/meetourinvestor/meetourinvestors";
 import Footer from "../cms/footer/footer";
 import ImageCarouselPosts from "../cms/imagecarousel/imagecarouselposts";
 import ChannelPartners from "../approvals/channelpartners";
+import HowIRAworks from "../cms/HowIRAworks/HowIRAworks"
 
 class Sections extends React.Component {
 
@@ -186,7 +187,9 @@ class Sections extends React.Component {
                                     }} >Why IRA-Street</button>
                                 </li>
                                 <li style={{borderLeft:'2px solid white',listStylePosition:'inside',margin: '0 -1rem'}}>
-                                    <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} >How IRA-Street Works</button>
+                                    <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} onClick={ ()=>{
+                                          this.setState({component :<HowIRAworks />})
+                                    }} >How IRA-Street Works</button>
                                 </li>
                                 <li style={{borderLeft:'2px solid white',listStylePosition:'inside',margin: '0 -1rem'}}>
                                     <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} >Explore IRA-Street</button>
