@@ -9,6 +9,7 @@ import '../node_modules/font-awesome/css/font-awesome.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Login from './app/admin/login';
 import Sections from './app/sections/sections';
+import AddFaq from './app/cms/addFaq';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -18,6 +19,7 @@ root.render(
     <Route path="*" element={<Navigate to="/login" />} />
     <Route  path="login" element={<Login/>}/>
     <Route path="/dashboard" element={<Sections/>}/>
+    <Route path="/addFaq" element={<AddFaq/>}/>
   </Routes>
 </BrowserRouter>
 );
