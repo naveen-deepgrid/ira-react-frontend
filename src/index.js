@@ -10,6 +10,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import Login from './app/admin/login';
 import Sections from './app/sections/sections';
 import AddFaq from './app/cms/addFaq';
+import AddLink from './app/cms/featuredin/addlink';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -20,6 +21,7 @@ root.render(
     <Route  path="login" element={<Login/>}/>
     <Route path="/dashboard" element={<Sections/>}/>
     <Route path="/addFaq" element={<AddFaq/>}/>
+    <Route path="/fixtheisuee" element={<AddLink/>}/>
   </Routes>
 </BrowserRouter>
 );

@@ -65,7 +65,7 @@ start investing in real estate with as little as 5lakhs, and companies distribut
                             <p style={{fontWeight:'bold',width:'8rem',margin:'-1rem 1.5rem',fontSize:'14px'}}>ADD SECTION</p>
                             </div>
                         </button> */}
-                        <button style={{background:'#753d6a',border:'1px solid gray',borderRadius:'10px',width:'8rem',height:'3rem',color:'white',marginBottom:'1rem',float:"right",margin:'0 -7.5rem'}}>
+                        <button style={{background:'#753d6a',border:'1px solid gray',borderRadius:'10px',width:'8rem',height:'3rem',color:'white',marginBottom:'1rem',float:"right",margin:'0 -2.5rem'}}>
                                 <p style={{fontWeight:'bold',width:'3rem',margin:'0.2rem 0rem 0rem 1.7rem'}}>SAVE</p>
                         </button>
 

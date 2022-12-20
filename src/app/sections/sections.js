@@ -17,6 +17,11 @@ import Connect from "../cms/Connectwithus";
 import Channel from "../cms/ChannelPartners";
 import WhyIra from "../cms/WhyIraStreet";
 import AddFaq from "../cms/addFaq";
+import FeaturedIn from "../cms/featuredin/featuredin";
+import MeetOurInvestors from "../cms/meetourinvestor/meetourinvestors";
+import Footer from "../cms/footer/footer";
+import ImageCarouselPosts from "../cms/imagecarousel/imagecarouselposts";
+import ChannelPartners from "../approvals/channelpartners";
 
 class Sections extends React.Component {
 
@@ -25,7 +30,7 @@ class Sections extends React.Component {
 
         this.state = {
             component : '',
-            passChild : 'i am child'
+            passChild : ''
         }
 
       }
@@ -38,8 +43,9 @@ class Sections extends React.Component {
        }
 
        handleChildComponent = (child)=>{
-        this.setState({passChild : child})
+        this.setState({component : child})
        }
+
 
        render(){
         var count = 0
@@ -100,7 +106,9 @@ class Sections extends React.Component {
                             </button>
                             <ul className="navbar-dropdown-approvals">
                                 <li  style={{borderLeft:'2px solid white',listStylePosition:'inside',margin: '0 -1rem'}} >
-                                    <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} >Channel Partner</button>
+                                    <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} onClick={ ()=>{
+                                this.setState({component : <ChannelPartners />})
+                            }}>Channel Partner</button>
                                 </li>
                             </ul>    
                         </li>
@@ -168,7 +176,9 @@ class Sections extends React.Component {
                             </button>
                             <ul className="navbar-dropdown-cms">
                                 <li  style={{borderLeft:'2px solid white',listStylePosition:'inside',margin: '0 -1rem'}} >
-                                    <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} >Image Carousel</button>
+                                    <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} onClick={ ()=>{
+                                         return this.state.component === '' ?  this.setState({component : <ImageCarouselPosts passChildComponent={this.handleChildComponent} />}) : this.state.component 
+                                    }}>Image Carousel</button>
                                 </li>
                                 <li style={{borderLeft:'2px solid white',listStylePosition:'inside',margin: '0 -1rem'}} >
                                     <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} onClick={ ()=>{
@@ -182,10 +192,14 @@ class Sections extends React.Component {
                                     <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} >Explore IRA-Street</button>
                                 </li>
                                 <li style={{borderLeft:'2px solid white',listStylePosition:'inside',margin: '0 -1rem'}}>
-                                    <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} >Featured In</button>
+                                    <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} onClick={ ()=>{
+                                        return this.state.component === '' ?  this.setState({component : <FeaturedIn passChildComponent={this.handleChildComponent} />}) : this.state.component  
+                                    }} >Featured In</button>
                                 </li>
                                 <li style={{borderLeft:'2px solid white',listStylePosition:'inside',margin: '0 -1rem'}}>
-                                    <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} >Meet our Investors</button>
+                                    <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}}  onClick={ ()=>{
+                                       return this.state.component === '' ?  this.setState({component : <MeetOurInvestors passChildComponent={this.handleChildComponent} />}) : this.state.component  
+                                    }}>Meet our Investors</button>
                                 </li>
                                 <li style={{borderLeft:'2px solid white',listStylePosition:'inside',margin: '0 -1rem'}}>
                                     <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} onClick={ ()=>{
@@ -202,17 +216,19 @@ class Sections extends React.Component {
                                 </li>
                                 <li style={{borderLeft:'2px solid white',listStylePosition:'inside',margin: '0 -1rem'}}>
                                     <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}}  onClick={ ()=>{
-                                        // this.props.data === true ?  this.setState({component : <AddFaq />}) :  this.setState({component : <Faq />})
-                                        this.setState({component : <Faq passChildComponent={this.handleChildComponent} />})
-                                        // if(this.state.component === )
-
+                                         return this.state.component === '' ?  this.setState({component : <Faq passChildComponent={this.handleChildComponent} />}) : this.state.component                  
                                     }}>FAQ's</button>
                                 </li>
                                 <li style={{borderLeft:'2px solid white',listStylePosition:'inside',margin: '0 -1rem'}}>
-                                    <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} >Footer</button>
+                                    <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}} onClick={ ()=>{
+                                          this.setState({component :<Footer/> })
+                                    }}>Footer</button>
                                 </li>
                             </ul>
                         </li>
+                        {
+                            console.log(this.state.component,"check once update")
+                        }
                         <li className="main_div_md">
                             <button style={{background:'none',border:'none'}} onClick={ ()=>{
 
