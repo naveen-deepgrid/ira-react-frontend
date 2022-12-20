@@ -2,6 +2,8 @@ import React from "react";
 import Profile from '../../assets/profile.svg'
 import Sections from "../sections/sections";
 import AddFaq from "./addFaq";
+import {RemoveRedEye} from '@mui/icons-material';
+import { Icon } from '@material-ui/core';
 
 
 class Faq extends React.Component {
@@ -57,8 +59,6 @@ class Faq extends React.Component {
                     </div>
                     <div className="col-xl-4 col-lg-4 col-md-4 col-sm-4">
                         <button style={{background:'white',border:'1px solid #753d6a',borderRadius:'10px',width:'10rem',height:'3rem',float:'right',color:'white',background:'#753d6a'}} onClick={ ()=>{
-                            // this.setState({component : <AddFaq />}),
-                            //   <Sections data={this.state.component} />
                             this.props.passChildComponent(<AddFaq/>)
                         }}>
                         <div className="row" style={{margin:'1rem 0'}}>
@@ -69,8 +69,9 @@ class Faq extends React.Component {
     
                         <button style={{background:'white',border:'1px solid #753d6a',borderRadius:'10px',width:'10rem',height:'3rem',float:'right',color:'#753d6a',marginRight:'0.5rem'}}>
                         <div className="row" style={{padding:'0.5rem'}}>
-                        <i class="fa-regular fa-plus" style={{width:'20px',margin:'0.5rem 0'}}></i>
-                            <p style={{fontWeight:'bold',width:'4rem',margin:'0.5rem 0.1rem',fontSize:'14px'}}>Investors</p>
+                        {/* <i className="fa-regular fa-plus" style={{width:'20px',margin:'0.5rem 0'}}></i> */}
+                            {/* <p style={{fontWeight:'bold',width:'4rem',margin:'0.5rem 0.1rem',fontSize:'14px'}}>Investors</p> */}
+                            <p style={{fontWeight:'bold',width:'4rem',margin:'0.5rem auto',fontSize:'14px'}}>Investors</p>
                         </div>
                         </button>
 
@@ -90,8 +91,8 @@ class Faq extends React.Component {
                                                       <td style={{height:'3rem'}}>{data.tagid}</td>
                                                       <td>
                                                         <div className="row" style={{float:'right',margin:'0 1rem'}}>
-                                                        <i class="fa-regular fa-plus" style={{width:'20px'}}></i>
-                                                        <i class="fa-regular fa-plus" style={{width:'20px'}}></i>
+                                                        <i className='fas fa-pencil'style={{width:'20px'}}></i>
+                                                        <i className="fa-regular fa-plus" style={{width:'20px'}}></i>
                                                         </div>
                                                       </td>
                                                     </tr>

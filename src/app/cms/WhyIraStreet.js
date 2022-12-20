@@ -4,6 +4,7 @@ import React from "react";
 import Profile from '../../assets/profile.svg';
 import Close from '../../assets/close.svg';
 import '../../app/cms/WhyIraStreet.css';
+import Wrong from '../../assets/wrong.svg';
 class WhyIra extends React.Component{
     constructor(props){
         super(props);
@@ -12,7 +13,9 @@ class WhyIra extends React.Component{
             picture : false,
             src : false,
             picture1: false,
-            src1: false
+            src1: false,
+            showComponent:true,
+            elements: [{ id: 1 }]
         }
     }
     handlePictureSelected(event) {  
@@ -36,10 +39,12 @@ class WhyIra extends React.Component{
   //    console.log(picture.name)
       this.setState({
         picture1: picture.name,
-        src1: src
+        src1: src,
       });
 
     }
+
+
 
     renderPreview() {
         
@@ -102,8 +107,35 @@ class WhyIra extends React.Component{
 
     }
 
-    handleAdd(){
+    handleWrong = (e)=>{
+      e.preventDefault();
+        this.setState({
+          showComponent:false
+        }
+        );
 
+      }
+
+    renderPreview3(){
+      if(this.x > 1){
+        return(
+          <div>
+            <button onClick={this.handleWrong} style={{float:"right"}}>
+              <img src={Wrong} style={{width:'30px',height:'27px'}}></img>
+            </button>
+          </div>
+        )
+      }
+    }
+    
+
+    handleAdd = (e)=>{
+      console.log("i am here")
+      e.preventDefault();
+      const newElement = { id: this.state.elements.length + 1 };
+      console.log(newElement,"check the element object")
+      this.setState({ elements: [...this.state.elements, newElement] });
+      console.log(this.state.elements,"check the elements")
     }
 
     render(){
@@ -131,8 +163,22 @@ class WhyIra extends React.Component{
                     <input type="text" placeholder="Why IRA-Street" className="form-control" style={{height:'4rem',fontSize:'17px'}}></input>
                     </div>
 
-                    <div className="row">
-                        <div className="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+
+                    {/* copy 1 */}
+
+           <div className="row">
+                    {
+                      this.state.elements.map((x)=>{
+                      console.log(x, "check the x")
+                       return  <div key={x.id}>
+                        <div className="row">
+                          
+                           <h4>{`SECTION ${x.id}`}</h4>
+                           {/* <button onClick={this.handleWrong} style={{float:"right"}}>
+                            <img src={Wrong} style={{width:'30px',height:'27px'}} ></img>
+                           </button> */}
+                          
+                           <div className="col-xl-3 col-lg-3 col-md-3 col-sm-3">
                             <p>Image*</p>
                             <label for="file-input">
                            
@@ -140,31 +186,33 @@ class WhyIra extends React.Component{
                                </label>
                                <input type="file" id="file-input" onChange={this.handlePictureSelected.bind(this)} style={{display:'none'}}/>
 
-                        </div>
-                        <div className="col-xl-3 col-lg-3 col-md-3 col-sm-3" style={{margin:"0 8rem"}}>
-                        <p>Image*</p>
+                           </div>
+                           <div className="col-xl-3 col-lg-3 col-md-3 col-sm-3" style={{margin:"0 8rem"}}>
+                            <p>Image*</p>
                             <label for="file-input1">
                             
                                  {this.renderPreview1()}
                                </label>
                                <input type="file" id="file-input1" onChange={this.handlePicture1Selected.bind(this)} style={{display:'none'}}/>
 
+                           </div>
                         </div>
- 
-                     
+                          <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12" style={{margin:'3rem 0'}}>
+                               <p style={{marginTop:'1rem',marginBottom:'0.5rem'}}>Description*</p>
+                               <textarea auto-focus='false'rows="4" className="custom-scroll-bar form-control" id="scroll-bar-style" placeholder="Investing in the Real Estate market is everyone's dream, but it requires large amounts of capital, 
+                                                                                                                                     and not everyone can afford to invest in this beautiful dream. Mainly young people who have just started their careers cannot 
+                                                                                                                                     amass such significant wealth till they are late into their 30s.
+                                                                                                                                     Current alternative investment avenues are the stock market and the new age market place that help the common investor to 
+                                                                                                                                     start investing in real estate with as little as 5lakhs, and companies distribute the appreciation across investors " >
+                               </textarea>
+                          </div>
+                        </div>
+                      })
+                    }
+            </div>
 
-                        <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12" style={{margin:'3rem 0'}}>
-                    <p style={{marginTop:'1rem',marginBottom:'0.5rem'}}>Description*</p>
-                    <textarea auto-focus='false'rows="4" className="custom-scroll-bar form-control" id="scroll-bar-style" placeholder="Investing in the Real Estate market is everyone's dream, but it requires large amounts of capital, and not everyone can afford to
-invest in this beautiful dream. Mainly young people who have just started their careers cannot amass such significant wealth till
-they are late into their 30s.
 
-Current alternative investment avenues are the stock market and the new age market place that help the common investor to
-start investing in real estate with as little as 5lakhs, and companies distribute the appreciation across investors.
-" >
-
-                    </textarea>
-                    </div>
+                        {/* button sections */}
                     <div className="row">
                       <div className="col-xl-4 col-lg-4 col-md-4 col-sm-4"></div>
                       <div className="col-xl-4 col-lg-4 col-md-4 col-sm-4"></div>
@@ -172,8 +220,8 @@ start investing in real estate with as little as 5lakhs, and companies distribut
                         <div style={{marginLeft:'-0.8rem',width:'26rem'}}>
                         <button onClick={this.handleAdd} style={{background:'white',border:'1px solid #753d6a',borderRadius:'10px',width:'10rem',height:'3rem',color:'#753d6a',marginLeft:'6.8rem'}}>  
                             <div className="row" style={{padding:'0.5rem'}}>
-                            <i class="fa-regular fa-plus" style={{width:'20px'}}></i>
-                            <p style={{fontWeight:'bold',width:'8rem',margin:'-1rem 1.5rem',fontSize:'14px'}}>ADD SECTION</p>
+                            <i className="fa-regular fa-plus" style={{width:'20px',fontWeight:'bold'}}></i>
+                            <p style={{fontWeight:'bold',width:'8rem',margin:'-1.2rem 1.5rem',fontSize:'15px'}}>ADD SECTION</p>
                             </div>
                         </button>
                         <button style={{background:'#753d6a',border:'1px solid gray',borderRadius:'10px',width:'8rem',height:'3rem',color:'white',marginBottom:'1rem',float:"right"}}>
@@ -185,35 +233,9 @@ start investing in real estate with as little as 5lakhs, and companies distribut
 
 
                       </div>
-                      
-
-                      
-
-                      {/* <div className="Add-section" style={{background: 'red',width:'5rem'}}>
-                      <button onClick={this.handleAdd} style={{background:'white',border:'1px solid gray',borderRadius:'10px',width:'10rem',height:'4rem',float:'right',color:'#753d6a'}}>
-                            <div className="row" style={{padding:'0.5rem'}}>
-  
-                            <p style={{fontWeight:'bold',width:'3rem',margin:'0.5rem -0.9rem'}}>ADD SECTION</p>
-                            </div>
-                        </button>
-
-
-                      </div> */}
-                      {/* <div className="Save-Button" style={{background: 'pink',width:'6rem'}}>
-                        <button style={{background:'#753d6a',border:'1px solid gray',borderRadius:'10px',width:'8rem',height:'3rem',float:'right',color:'white',marginBottom:'1rem'}}>
-                            <div className="row" style={{padding:'0.5rem'}}>
-                                <p style={{fontWeight:'bold',width:'3rem',margin:'0.2rem 0rem 0rem 1.7rem'}}>SAVE</p>
-                            </div>
-                        </button>
-
-                      </div> */}
                     </div>
-
-
-
                     </div>
                 </div>
-            </div>
         )
 }
 }
