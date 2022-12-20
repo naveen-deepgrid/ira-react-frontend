@@ -16,6 +16,7 @@ import Faq from "../cms/faq";
 import Connect from "../cms/Connectwithus";
 import Channel from "../cms/ChannelPartners";
 import WhyIra from "../cms/WhyIraStreet";
+import AddFaq from "../cms/addFaq";
 
 class Sections extends React.Component {
 
@@ -23,7 +24,8 @@ class Sections extends React.Component {
         super(props); 
 
         this.state = {
-            component : ''
+            component : '',
+            passChild : 'i am child'
         }
 
       }
@@ -33,7 +35,10 @@ class Sections extends React.Component {
        }
 
        componentDidMount(){
+       }
 
+       handleChildComponent = (child)=>{
+        this.setState({passChild : child})
        }
 
        render(){
@@ -197,7 +202,10 @@ class Sections extends React.Component {
                                 </li>
                                 <li style={{borderLeft:'2px solid white',listStylePosition:'inside',margin: '0 -1rem'}}>
                                     <button style={{background:'none',border:'none',color:'white',marginBottom:'1.5rem'}}  onClick={ ()=>{
-                                        this.setState({component : <Faq />})
+                                        // this.props.data === true ?  this.setState({component : <AddFaq />}) :  this.setState({component : <Faq />})
+                                        this.setState({component : <Faq passChildComponent={this.handleChildComponent} />})
+                                        // if(this.state.component === )
+
                                     }}>FAQ's</button>
                                 </li>
                                 <li style={{borderLeft:'2px solid white',listStylePosition:'inside',margin: '0 -1rem'}}>
